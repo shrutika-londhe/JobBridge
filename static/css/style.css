@@ -1,0 +1,100 @@
+   /* Categories */
+      .category-card,
+      .job-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+      .category-card:hover,
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      @media (max-width: 768px) {
+        .category-card,
+        .job-card {
+          padding: 15px;
+        }
+      }
+
+
+      /* review */
+      .review-card {
+    margin-top: 50px;
+    min-width: 300px; /* Increase minimum width */
+    width: 420px; /* Adjust card width */
+    max-width: 100%; /* Ensure responsiveness */
+    border: 1px solid #DDD;
+    padding: 20px; /* Increased padding */
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 1px 12px rgba(136, 166, 255, 0.08);
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    gap: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.review-card:hover {
+    background-color: #cfe2ff; /* Change color on hover */
+}
+.scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px; /* Reduced gap between cards */
+    justify-content: space-around;
+    width: max-content;
+}
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;  /* Enable horizontal scrollbar */
+    white-space: 40px; /* Prevent extra spaces */
+}
+
+.actively-hiring-label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: green;
+}
+.actively-hiring-label i {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.top-section .title {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.scroll .review-card .bottom-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 12px;
+}
+
+.ic-16-filled-star::before {
+    content: "★"; /* Unicode star character */
+    color: gold;  /* Star color */
+    font-size: 16px; /* Adjust size */
+}
+.bottom-section {
+    margin-top: auto; /* Pushes the section to the bottom */
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 12px;
+    margin-left: 0%;
+}
+.review-name {
+    color: #212121;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
