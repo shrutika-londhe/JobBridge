@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from authentication.views import homePage
 from authentication.views import authPage
+from authentication.views import about
+from authentication.views import contact
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('',homePage),
-    path('login/',authPage)
+    path('login/',authPage),
+    path('about/',about),
+    path('contact/',contact)
 ]
