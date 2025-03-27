@@ -486,3 +486,15 @@ img {
     vertical-align: middle;
     border-style: none;
 }
+
+.faq-section {
+    margin: 50px auto;
+
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.faq-header {
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 import mysql.connector as sql
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
-# Create your views here.
 def homePage(request):
     return render(request, 'index.html')
 
@@ -11,10 +13,6 @@ def about(request):
 def contact(request):
     return render(request,'contactUs.html')
 
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
-from django.contrib import messages
 
 def authPage(request):
     if request.method == 'POST':
