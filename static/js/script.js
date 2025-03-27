@@ -1,11 +1,24 @@
-const container = document.querySelector(".container");
-const registerBtn = document.querySelector(".register-btn"); // Fixed typo
-const loginBtn = document.querySelector(".login-btn");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Loaded!");
 
-registerBtn.addEventListener("click", () => {
-  container.classList.add("active");
-});
+  const container = document.querySelector(".container");
+  const registerBtn = document.querySelector(".register-btn");
+  const loginBtn = document.querySelector(".login-btn");
 
-loginBtn.addEventListener("click", () => {
-  container.classList.remove("active");
+  console.log(container, registerBtn, loginBtn); // Check if elements exist
+
+  if (!container || !registerBtn || !loginBtn) {
+    console.error("One or more elements are missing!");
+    return;
+  }
+
+  registerBtn.addEventListener("click", () => {
+    container.classList.add("active");
+    console.log("Register button clicked");
+  });
+
+  loginBtn.addEventListener("click", () => {
+    container.classList.remove("active");
+    console.log("Login button clicked");
+  });
 });

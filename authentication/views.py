@@ -11,6 +11,11 @@ def about(request):
 def contact(request):
     return render(request,'contactUs.html')
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 def authPage(request):
     if request.method == 'POST':
         action = request.POST.get('action')  # Check if login or register
@@ -21,8 +26,9 @@ def authPage(request):
             email = request.POST.get('email', '')
             password = request.POST.get('password', '')
 
+            # Ensure correct table name (users, not auth_user)
             cursor.execute("SELECT * FROM users WHERE email = %s AND password = %s", (email, password))
-            result = cursor.fetchone()  # Fetch one record instead of fetchall()
+            result = cursor.fetchone()
 
             cursor.close()
             obj.close()
@@ -38,7 +44,7 @@ def authPage(request):
             email = request.POST.get('email', '')
             password = request.POST.get('password', '')
 
-            # Check if user already exists
+            # Check if user already exists in 'users' table
             cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
             existing_user = cursor.fetchone()
 
@@ -47,7 +53,7 @@ def authPage(request):
                 obj.close()
                 return render(request, 'auth.html', {'message': 'User already exists. Please log in!'})
 
-            # Insert new user
+            # Insert new user into 'users' table
             cursor.execute("INSERT INTO users (firstname, lastname, email, password) VALUES (%s, %s, %s, %s)",
                            (firstname, lastname, email, password))
             obj.commit()
@@ -58,3 +64,4 @@ def authPage(request):
             return render(request, 'index.html', {'message': 'User registered successfully! Please log in.'})
 
     return render(request, 'auth.html')
+

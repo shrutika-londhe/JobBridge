@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'JobBridge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jobridge',  # Your MySQL database name
+        'USER': 'root',  # Your MySQL username
+        'PASSWORD': 'system',  # Your MySQL password
+        'HOST': 'localhost',  # Usually 'localhost'
+        'PORT': '3306',  # MySQL port (default is 3306)
     }
 }
 
