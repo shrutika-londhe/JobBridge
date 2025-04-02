@@ -20,11 +20,13 @@ from authentication.views import homePage
 from authentication.views import authPage
 from authentication.views import about
 from authentication.views import contact
+from dashboard.views import dashboard
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('',homePage),
-    path('login/',authPage),
-    path('about/',about),
-    path('contact/',contact)
+    path('login/',authPage, name='authPage'),
+    path('about/',about, name='about'),
+    path('contact/',contact, name='contact'),
+    path('dashboard/',dashboard, name='dashboard')
 ]
