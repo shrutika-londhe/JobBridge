@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            max-width: 550px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #ff416c;
+        }
+        .btn-enroll {
+            width: 100%;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-enroll:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Enroll Now</h2>
+    <form id="enrollForm">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="fullName" placeholder="Your Full Name" required>
+            <label for="fullName">Full Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+            <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+            <label for="phone">Phone Number</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <select class="form-select" id="courseSelect" required>
+                <option value="">-- Choose a Course --</option>
+                <option>Artificial Intelligence & ML</option>
+                <option>Data Science & Analytics</option>
+                <option>UI/UX Design for Beginners</option>
+                <option>Cybersecurity Essentials</option>
+                <option>Mobile App Development</option>
+                <option>Cloud Computing with AWS & Azure</option>
+                <option>DevOps & Kubernetes</option>
+                <option>Full Stack Web Development</option>
+            </select>
+            <label for="courseSelect">Select Course</label>
+        </div>
+
+        <!-- Programming Knowledge -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">How much programming Knowlegde/experience do you have?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="experience" id="beginner" value="Beginner" required>
+                <label class="form-check-label" for="beginner">Beginner</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="experience" id="intermediate" value="Intermediate">
+                <label class="form-check-label" for="intermediate">Intermediate</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="experience" id="advanced" value="Advanced">
+                <label class="form-check-label" for="advanced">Advanced</label>
+            </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Select Payment Method</label>
+            <select class="form-select" id="paymentMethod" required>
+                <option value="">-- Select Payment Method --</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="upi">UPI</option>
+            </select>
+        </div>
+
+        <!-- Card Payment Fields -->
+        <div id="cardDetails" class="hidden">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="cardNumber" placeholder="Card Number">
+                <label for="cardNumber">Card Number</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="cardName" placeholder="Cardholder Name">
+                <label for="cardName">Cardholder Name</label>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+                        <label for="expiryDate">Expiry Date (MM/YY)</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="cvv" placeholder="CVV">
+                        <label for="cvv">CVV</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PayPal Payment Fields -->
+        <div id="paypalDetails" class="hidden">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="paypalEmail" placeholder="PayPal Email">
+                <label for="paypalEmail">PayPal Email</label>
+            </div>
+        </div>
+
+        <!-- UPI Payment Fields -->
+        <div id="upiDetails" class="hidden">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="upiId" placeholder="UPI ID">
+                <label for="upiId">UPI ID</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-enroll">Submit Enrollment</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#paymentMethod").change(function() {
+            let paymentType = $(this).val();
+            $("#cardDetails, #paypalDetails, #upiDetails").addClass("hidden");
+
+            if (paymentType === "card") {
+                $("#cardDetails").removeClass("hidden");
+            } else if (paymentType === "paypal") {
+                $("#paypalDetails").removeClass("hidden");
+            } else if (paymentType === "upi") {
+                $("#upiDetails").removeClass("hidden");
+            }
+        });
+
+        $("#enrollForm").submit(function(event) {
+            event.preventDefault();
+            alert("Enrollment Successful! Payment Processed.");
+        });
+    });
+</script>
+
+</body>
+</html>

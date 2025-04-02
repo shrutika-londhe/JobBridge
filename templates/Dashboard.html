@@ -11,11 +11,12 @@
     <style>
       body {
         display: flex;
+        background-color: #eef5ff;
       }
       #sidebar {
         width: 250px;
         height: 100vh;
-        background: #343a40;
+        background: #1e3a8a;
         color: white;
         padding-top: 20px;
         text-align: center;
@@ -25,46 +26,38 @@
         background: #f8f9fa;
         padding: 10px 20px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
-      .profile {
-        position: relative;
+      .search-bar {
+        flex-grow: 0.3;
+        margin-right: 20px;
+      }
+      .search-bar input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .icons {
         display: flex;
         align-items: center;
+      }
+      .icon {
+        margin-right: 15px;
         cursor: pointer;
+        position: relative;
       }
-      .profile img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-      .profile h5 {
-        margin-left: 10px;
-        margin-bottom: 0;
-      }
-      .profile-dropdown {
-        display: none;
+      .icon span {
         position: absolute;
-        top: 50px;
-        right: 0;
-        background: white;
-        color: black;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        text-align: left;
-        z-index: 1000;
-      }
-      .profile-dropdown a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: black;
-      }
-      .profile-dropdown a:hover {
-        background: #f1f1f1;
+        top: -5px;
+        right: -5px;
+        background: red;
+        color: white;
+        font-size: 12px;
+        padding: 2px 5px;
+        border-radius: 50%;
       }
       .content {
         flex-grow: 1;
@@ -75,16 +68,30 @@
         cursor: pointer;
       }
       .menu-item:hover {
-        background: #495057;
+        background: #3b5998;
+      }
+      .course-info,
+      .profile-info {
+        display: none;
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
       }
     </style>
   </head>
   <body>
     <div id="sidebar">
       <h4 class="text-center">Project Dashboard</h4>
-      <div class="menu-item" onclick="showSection('courses')">Courses</div>
+      <div class="menu-item" onclick="showCourseInfo('Course 1')">Courses</div>
       <div class="menu-item" onclick="showSection('jobs')">Jobs</div>
-      <div class="menu-item" onclick="showSection('profile')">User Profile</div>
       <div class="menu-item" onclick="showSection('notifications')">
         Notifications
       </div>
@@ -92,39 +99,31 @@
     </div>
     <div class="content">
       <div class="top-bar">
-        <div class="profile" onclick="toggleDropdown()">
-          <img src="https://via.placeholder.com/40" alt="Profile Photo" />
-          <h5>John Doe</h5>
-          <div class="profile-dropdown" id="profileDropdown">
-            <a href="#">My Learning</a>
-            <a href="#">My Cart</a>
-            <a href="#">Wishlist</a>
-            <a href="#">Teach on Platform</a>
-            <hr />
-            <a href="#">Notifications (3)</a>
-            <a href="#">Messages (7)</a>
-            <hr />
-            <a href="#">Account Settings</a>
-            <a href="#">Payment Methods</a>
-            <a href="#">Subscriptions</a>
-            <a href="#">Purchase History</a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+        </div>
+        <div class="icons">
+          <div class="icon" onclick="showSection('notifications')">
+            🔔<span>3</span>
           </div>
         </div>
       </div>
+      <div id="profile" class="profile-info">
+        <h2>Welcome, User!</h2>
+        <img src="profile.jpg" alt="Profile Photo" class="profile-photo" />
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Education:</strong> B.Sc. Computer Science</p>
+        <p><strong>Certifications:</strong> Full-Stack Web Developer</p>
+        <p><strong>Address:</strong> 123 Main Street, City</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+      </div>
       <div id="courses" class="section">
         <h2>Courses</h2>
-        <p>List of courses will be displayed here.</p>
+        <p>Click on a course to view details.</p>
       </div>
       <div id="jobs" class="section" style="display: none">
         <h2>Jobs</h2>
         <p>Job listings will be displayed here.</p>
-      </div>
-      <div id="profile" class="section" style="display: none">
-        <h2>User Profile</h2>
-        <button class="btn btn-primary" onclick="loadProfile()">
-          View Profile
-        </button>
-        <div id="profileData"></div>
       </div>
       <div id="notifications" class="section" style="display: none">
         <h2>Notifications</h2>
@@ -134,36 +133,34 @@
         <h2>Settings</h2>
         <p>Settings options will be displayed here.</p>
       </div>
+      <div id="courseInfo" class="course-info">
+        <h3>Course Details</h3>
+        <p id="courseTitle"></p>
+        <p><strong>Duration:</strong> 3 months</p>
+        <p><strong>Enrolled Date:</strong> 01-Jan-2025</p>
+        <p><strong>Payment:</strong> $300 Paid</p>
+      </div>
     </div>
 
     <script>
       function showSection(sectionId) {
-        document.querySelectorAll(".section").forEach((section) => {
-          section.style.display = "none";
-        });
+        document
+          .querySelectorAll(".section, .profile-info, .course-info")
+          .forEach((section) => {
+            section.style.display = "none";
+          });
         document.getElementById(sectionId).style.display = "block";
       }
 
-      function loadProfile() {
-        document.getElementById("profileData").innerHTML = `
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Email:</strong> johndoe@example.com</p>
-            `;
+      function showCourseInfo(courseName) {
+        document.getElementById("courseTitle").innerText = courseName;
+        document.getElementById("courseInfo").style.display = "block";
       }
 
-      function toggleDropdown() {
-        const dropdown = document.getElementById("profileDropdown");
-        dropdown.style.display =
-          dropdown.style.display === "block" ? "none" : "block";
-      }
-
-      document.addEventListener("click", function (event) {
-        const profile = document.querySelector(".profile");
-        const dropdown = document.getElementById("profileDropdown");
-        if (!profile.contains(event.target)) {
-          dropdown.style.display = "none";
-        }
-      });
+      // Show user profile by default on page load
+      window.onload = function () {
+        document.getElementById("profile").style.display = "block";
+      };
     </script>
   </body>
 </html>

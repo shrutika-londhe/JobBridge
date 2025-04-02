@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Computing with AWS & Azure</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Basic */
+      body.dark-mode {
+        background-color: #121212;
+        color: #f1f1f1;
+        transition: background 0.5s, color 0.5s;
+      }
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 1s ease;
+      }
+      .hero.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Sticky Button */
+      .floating-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        background: #ffb300;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+      .floating-btn:hover {
+        transform: scale(1.1);
+      }
+      /* Button Hover */
+      .btn-warning:hover {
+        box-shadow: 0 0 10px 3px #ffdd57;
+      }
+      /* Card Hover Effect */
+      .card:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      /* Instructor Image */
+      .instructor-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .instructor-img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Certificate Effect */
+      .certificate {
+        border: 2px dashed #667eea;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        background: #f8f9fa;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.5);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+        }
+      }
+      /* Scroll Animations */
+      [data-animate] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      [data-animate].animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Dark/Light Toggle -->
+    <div class="text-end p-3">
+      <button class="btn btn-secondary" onclick="toggleDarkMode()">
+        Toggle Dark/Light Mode
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" data-animate>
+      <h1>Cloud Computing with AWS & Azure</h1>
+      <p>
+        Master Cloud Services, Deploy Scalable Apps, and Manage Infrastructure
+      </p>
+      <p>Instructor: <strong> Chris Evans</strong> | 4.8 (1,400 reviews)</p>
+      <button
+        class="btn enroll-btn"
+        onclick="location.href='{% url 'enroll' %}'"
+      >
+        Enroll Now
+      </button>
+    </section>
+
+    <div class="container my-5">
+      <!-- Pricing -->
+      <section>
+        <h2>Pricing</h2>
+        <p><del>$300</del> <strong>$120</strong> (Limited Time Offer)</p>
+      </section>
+
+      <!-- Certificate -->
+      <section class="my-4 certificate">
+        <h4>Certificate of Completion</h4>
+        <p>
+          Receive an industry-recognized certificate upon completing the course.
+        </p>
+      </section>
+
+      <!-- Overview -->
+      <section data-animate>
+        <h2>Course Overview</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Duration: 10 Weeks</li>
+          <li class="list-group-item">Level: Intermediate</li>
+          <li class="list-group-item">
+            Pre-requisites: Networking & Linux Basics
+          </li>
+          <li class="list-group-item">
+            Skills: Cloud Deployment, Security, DevOps Integration
+          </li>
+        </ul>
+      </section>
+
+      <!-- Curriculum -->
+      <section class="my-5" data-animate>
+        <h2>Course Curriculum</h2>
+        <div class="accordion" id="curriculumAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#module1"
+              >
+                Module 1: Cloud Fundamentals
+              </button>
+            </h2>
+            <div id="module1" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                Cloud basics, service models, introduction to AWS & Azure
+                platforms.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#module2"
+              >
+                Module 2: AWS Essentials
+              </button>
+            </h2>
+            <div id="module2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                EC2, S3, Lambda, IAM, and deploying cloud applications.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#module3"
+              >
+                Module 3: Azure Essentials
+              </button>
+            </h2>
+            <div id="module3" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Virtual Machines, Azure Storage, App Services, and Azure Active
+                Directory.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instructor -->
+      <section class="my-5" data-animate>
+        <h2>Instructor</h2>
+        <div class="d-flex align-items-center">
+          <div>
+            <h5>Chris Evans</h5>
+            <p>
+              Cloud Solutions Architect | AWS Certified & Microsoft Azure Expert
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="my-5" data-animate>
+        <h2>Student Reviews</h2>
+        <strong>4.8</strong> average rating
+        <div class="progress mb-3" style="height: 10px">
+          <div class="progress-bar bg-success" style="width: 95%"></div>
+        </div>
+        <blockquote class="blockquote">
+          <p>"Excellent course for aspiring Cloud Engineers!"</p>
+          <footer class="blockquote-footer">Michael Clark</footer>
+        </blockquote>
+      </section>
+
+      <!-- FAQs -->
+      <section class="my-5">
+        <h2>FAQs</h2>
+        <div class="accordion" id="faqAccordion6">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq61"
+              >
+                Will I learn both AWS and Azure?
+              </button>
+            </h2>
+            <div id="faq61" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                Yes, you will learn both AWS and Azure core services and how to
+                work with them.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq62"
+              >
+                Will this course help for certifications?
+              </button>
+            </h2>
+            <div id="faq62" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Absolutely! This course covers topics useful for AWS and Azure
+                certifications.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Courses -->
+      <section class="my-5" data-animate>
+        <h2>Related Courses</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="https://i.ytimg.com/vi/Ia-UEYYR44s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDsq1CSuTk9WgUNWZ5Oq2mWmWcIzQ"
+                class="card-img-top"
+                alt="Related Course"
+              />
+              <div class="card-body">
+                <h5 class="card-title">AWS Certified Solutions Architect</h5>
+                <a href="#" class="btn btn-outline-primary">View Course</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      &copy; 2025 CoursePlatform. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll("[data-animate]").forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("animate");
+          }
+        });
+      });
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+  </body>
+</html>
