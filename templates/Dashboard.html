@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -89,7 +90,7 @@
   </head>
   <body>
     <div id="sidebar">
-      <h4 class="text-center">Project Dashboard</h4>
+      <h4 class="text-center">JobBridge</h4>
       <div class="menu-item" onclick="showCourseInfo('Course 1')">Courses</div>
       <div class="menu-item" onclick="showSection('jobs')">Jobs</div>
       <div class="menu-item" onclick="showSection('notifications')">
@@ -108,7 +109,7 @@
           </div>
         </div>
       </div>
-      <div id="profile" class="profile-info">
+      <div id="profile" class="profile-info" style="width: 300px">
         <h2>Welcome, User!</h2>
         <img src="profile.jpg" alt="Profile Photo" class="profile-photo" />
         <p><strong>Name:</strong> John Doe</p>
@@ -133,7 +134,7 @@
         <h2>Settings</h2>
         <p>Settings options will be displayed here.</p>
       </div>
-      <div id="courseInfo" class="course-info">
+      <div id="courseInfo" class="course-info" style="width: 200px">
         <h3>Course Details</h3>
         <p id="courseTitle"></p>
         <p><strong>Duration:</strong> 3 months</p>

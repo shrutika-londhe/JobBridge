@@ -31,10 +31,12 @@ from courses.views import development2;
 from courses.views import devops_mobile1;
 from courses.views import devops_mobile2;
 from courses.views import enroll;
+from authentication.views import house;
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('',homePage),
+    path('home/',house),
     path('login/',authPage, name='authPage'),
     path('about/',about, name='about'),
     path('contact/',contact, name='contact'),

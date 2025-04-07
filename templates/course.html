@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,6 +53,9 @@
       .course-container {
         display: none;
       }
+      .custom-card {
+        margin-left: 20px; /* Adjust as needed */
+      }
     </style>
   </head>
   <body>
@@ -80,221 +84,252 @@
         <div class="row">
           <!-- Course 1 -->
           <div class="col-md-4 mb-4 course-container ai-data">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/premium-photo/future-artificial-intelligence-robot-cyborg_31965-6387.jpg?w=1800"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Artificial Intelligence & ML</h4>
-              <p>Master AI & Machine Learning with hands-on projects.</p>
-              <p><strong>Instructor:</strong> Dr. Alex Johnson</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-half text-warning"></i> 4.9 | ⏳ 10 Weeks |
-                Beginner to Advanced
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'ai_data1' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/premium-photo/future-artificial-intelligence-robot-cyborg_31965-6387.jpg?w=1800"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Artificial Intelligence & ML</h4>
+                <p>Master AI & Machine Learning with hands-on projects.</p>
+                <p><strong>Instructor:</strong> Dr. Alex Johnson</p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i> 4.9 | ⏳ 10 Weeks
+                  | Beginner to Advanced
+                </p>
+                <div class="mt-auto"></div>
+                <a href="{% url  'ai_data1' %}" class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 2 -->
           <div class="col-md-4 mb-4 course-container ai-data">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/free-photo/business-data-analysis_53876-95296.jpg?t=st=1743002534~exp=1743006134~hmac=6aae7c6e1c7f3d4c1251fce8f2de61c512bc2a94a78927e71f62797108e40257&w=1380"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Data Science & Analytics</h4>
-              <p>Learn Python, SQL, and Data Visualization.</p>
-              <p><strong>Instructor:</strong> Sarah Miller</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                4.8 | ⏳ 12 Weeks | Beginner to Advanced
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'ai_data2' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/free-photo/business-data-analysis_53876-95296.jpg?t=st=1743002534~exp=1743006134~hmac=6aae7c6e1c7f3d4c1251fce8f2de61c512bc2a94a78927e71f62797108e40257&w=1380"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Data Science & Analytics</h4>
+                <p>Learn Python, SQL, and Data Visualization.</p>
+                <p><strong>Instructor:</strong> Sarah Miller</p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  4.8 | ⏳ 12 Weeks | Beginner to Advanced
+                </p>
+                <div class="mt-auto"></div>
+                <a href="{% url  'ai_data2' %}" class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 3 -->
           <div class="col-md-4 mb-4 course-container development">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?t=st=1743002297~exp=1743005897~hmac=3e3b5a1451a94ef9dbc259f8cda5a394cef11771f62383e8a45c624edc3d73d5&w=1380"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>UI/UX Design for Beginners</h4>
-              <p>Master Figma, Adobe XD, and UX principles.</p>
-              <p><strong>Instructor:</strong> Mark Johnson</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-half text-warning"></i>4.7 | ⏳ 8 Weeks |
-                Beginner
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'development1' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?t=st=1743002297~exp=1743005897~hmac=3e3b5a1451a94ef9dbc259f8cda5a394cef11771f62383e8a45c624edc3d73d5&w=1380"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>UI/UX Design for Beginners</h4>
+                <p>Master Figma, Adobe XD, and UX principles.</p>
+                <p>
+                  <strong>Instructor:</strong> Mr. Kunal Verma, Product Designer
+                  at Swiggy
+                </p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>4.7 | ⏳ 8 Weeks |
+                  Beginner
+                </p>
+                <div class="mt-auto"></div>
+                <a
+                  href="{% url  'development1' %}"
+                  class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 4 -->
           <div class="col-md-4 mb-4 course-container development">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/premium-photo/web-development-coding-programming-internet-technology-business-concept-business-woman-hand-touching-web-development-icon-vr-screen_1296497-352.jpg?w=1380"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Full-Stack Web Development</h4>
-              <p>Master HTML, CSS, JavaScript, and Django.</p>
-              <p><strong>Instructor:</strong> Jane Wilson</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                4.9 | ⏳ 14 Weeks | Beginner to Advanced
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'development2' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/premium-photo/web-development-coding-programming-internet-technology-business-concept-business-woman-hand-touching-web-development-icon-vr-screen_1296497-352.jpg?w=1380"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Full-Stack Web Development</h4>
+                <p>Master HTML, CSS, JavaScript, and Django.</p>
+                <p><strong>Instructor:</strong> Jane Wilson</p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  4.9 | ⏳ 14 Weeks | Beginner to Advanced
+                </p>
+                <div class="mt-auto"></div>
+                <a href="{% url 'development2' %}" class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 5 -->
           <div class="col-md-4 mb-4 course-container cyber-cloud">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37368.jpg?t=st=1743002386~exp=1743005986~hmac=ec4a3a0b3cb2e376c82e46169597c642d846473423f5cbf7be72827ffc07698c&w=900"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Cybersecurity Essentials</h4>
-              <p>Learn ethical hacking and cybersecurity basics.</p>
-              <p><strong>Instructor:</strong> John Smith</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-half text-warning"></i> 4.8 | ⏳ 10 Weeks |
-                Intermediate
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'cyber_cloud1' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37368.jpg?t=st=1743002386~exp=1743005986~hmac=ec4a3a0b3cb2e376c82e46169597c642d846473423f5cbf7be72827ffc07698c&w=900"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Cybersecurity Essentials</h4>
+                <p>Learn ethical hacking and cybersecurity basics.</p>
+                <p>
+                  <strong>Instructor:</strong> Ms. Riya Kapoor, Security Analyst
+                  at Cisco
+                </p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i> 4.8 | ⏳ 10 Weeks
+                  | Intermediate
+                </p>
+                <div class="mt-auto"></div>
+                <a href="{% url 'cyber_cloud1'%}" class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 6 -->
           <div class="col-md-4 mb-4 course-container cyber-cloud">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/premium-psd/3d-illustration-cloud-storage-you-website_434471-346.jpg?w=1380"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Cloud Computing with AWS & Azure</h4>
-              <p>Master AWS, Azure, and cloud security.</p>
-              <p><strong>Instructor:</strong> Chris Evans</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>4.8 | ⏳ 10 Weeks |
-                Intermediate
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'cyber_cloud2' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/premium-psd/3d-illustration-cloud-storage-you-website_434471-346.jpg?w=1380"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Cloud Computing with AWS & Azure</h4>
+                <p>Master AWS, Azure, and cloud security.</p>
+                <p>
+                  <strong>Instructor:</strong> Mr. Akash Mehta, Cloud Consultant
+                  at Accenture
+                </p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>4.8 | ⏳ 10 Weeks
+                  | Intermediate
+                </p>
+                <div class="mt-auto"></div>
+                <a href="{% url 'cyber_cloud2' %}" class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 7 -->
           <div class="col-md-4 mb-4 course-container devops-mobile">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/premium-photo/hand-holding-wireless-peripheral-with-mobile-apps-development-inscription-modern-technology-concept_1077205-321.jpg?w=2000"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>Mobile App Development</h4>
-              <p>Learn Flutter & React Native to build apps.</p>
-              <p><strong>Instructor:</strong> Emily Brown</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-half text-warning"></i>4.7 | ⏳ 12 Weeks |
-                Intermediate
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'devops_mobile1' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/premium-photo/hand-holding-wireless-peripheral-with-mobile-apps-development-inscription-modern-technology-concept_1077205-321.jpg?w=2000"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>Mobile App Development</h4>
+                <p>Learn Flutter & React Native to build apps.</p>
+                <p><strong>Instructor:</strong> Emily Brown</p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>4.7 | ⏳ 12 Weeks
+                  | Intermediate
+                </p>
+                <div class="mt-auto"></div>
+                <a
+                  href="{% url 'devops_mobile1' %}"
+                  class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Course 8 -->
           <div class="col-md-4 mb-4 course-container devops-mobile">
-            <div class="card course-card d-flex flex-column h-100">
-              <img
-                src="https://img.freepik.com/premium-vector/devops-process-tiny-programmer-practice-development-software-operations-software-enginee_501813-784.jpg?w=1380"
-                class="card-img-top"
-                alt="AI Course Image"
-                style="height: 200px; object-fit: cover"
-              />
-              <div class="card-body d-flex flex-column"></div>
-              <h4>DevOps & Kubernetes</h4>
-              <p>Learn CI/CD, Docker, and Kubernetes.</p>
-              <p><strong>Instructor:</strong> Robert Lee</p>
-              <p>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-half text-warning"></i> 4.9 | ⏳ 10 Weeks |
-                Advanced
-              </p>
-              <div class="mt-auto"></div>
-              <a href="{% url 'devops_mobile2' %}" class="btn btn-primary w-100"
-                >Know More</a
-              >
+            <div class="card custom-card d-flex flex-column h-100">
+              <div class="card-body">
+                <img
+                  src="https://img.freepik.com/premium-vector/devops-process-tiny-programmer-practice-development-software-operations-software-enginee_501813-784.jpg?w=1380"
+                  class="card-img-top"
+                  alt="AI Course Image"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column"></div>
+                <h4>DevOps & Kubernetes</h4>
+                <p>Learn CI/CD, Docker, and Kubernetes.</p>
+                <p><strong>Instructor:</strong> Robert Lee</p>
+                <p>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i> 4.9 | ⏳ 10 Weeks
+                  | Advanced
+                </p>
+                <div class="mt-auto"></div>
+                <a
+                  href="{% url 'devops_mobile2' %}"
+                  class="btn btn-primary w-100"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
         </div>

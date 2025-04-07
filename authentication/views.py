@@ -13,6 +13,9 @@ def about(request):
 def contact(request):
     return render(request,'contactUs.html')
 
+def house(request):
+    return render(request,'Home.html')
+
 
 def authPage(request):
     if request.method == 'POST':
