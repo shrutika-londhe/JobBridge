@@ -1,0 +1,1843 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Sections with Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-white shadow-sm py-3 px-3 d-flex align-items-center">
+        <!-- Label Text -->
+        <span class="fw-bold me-3">Knowledge</span>
+
+        <!-- Search Bar -->
+        <form class="custom-search">
+            <i class="bi bi-search search-icon mr-5"></i>
+            <input class="form-control border" type="search" placeholder="Find your job here" aria-label="Search">
+        </form>
+    </nav>
+    <!-- nav-bar ends -->
+    <!-- title section -->
+    <div class="container">
+        <div class="title">
+            <h1 class="fw-bold mt-5">Explore roles</h1>
+            <div>Advance in your career with recognized credentials
+                across levels. Choose from 60 roles. </div>
+        </div>
+    </div>
+    <!-- title section ends -->
+
+    <div class="container mt-4">
+        <div class="text-center mb-5">
+            <div class="d-flex align-items-center mt-3">
+                <select class="form-select w-auto me-2  shadow-none focus-ring-0">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select>
+                <button class="btn-category  active" onclick="showSection('section1')">All</button>
+                <button class="btn-category" onclick="showSection('section2')">Software Engineering & IT</button>
+                <button class="btn-category" onclick="showSection('section3')">Business</button>
+                <button class="btn-category" onclick="showSection('section4')">Sales & Marketing</button>
+                <button class="btn-category" onclick="showSection('section5')">Data Science & Analytics</button>
+                <button class="btn-category" onclick="showSection('section6')">Healthcare</button>
+            </div>
+        </div>
+
+        <!-- Section 1: Four Cards in One Row -->
+        <div id="section1" class="content-section" style="display: block;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'dataAnalyst'}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="cardd-text">A Data Analyst collects, cleans, and interprets data, using tools
+                                like
+                                Excel, SQL, and Tableau to analyze trends and provide insights for decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                data
+                                to find insights, creating reports and visualizations, working with spreadsheets and
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,087</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>25,124</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'dataScientist' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Scientist</h5>
+                            <p class="cardd-text">A Data Scientist analyzes large datasets to uncover insights,
+                                using
+                                statistics, machine learning, and visualization to inform business strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                complex
+                                datasets, developing machine learning models, solving statistical problems. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹412,708</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>32,249</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'machineLearning' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="cardd-text">A Machine Learning Engineer builds and optimizes algorithms that
+                                enable
+                                computers to learn from data, using large datasets and neural networks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                machine
+                                learning models, working with large datasets.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹212,679</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>12,240</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'cyberSecurity' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="cardd-text">A Cyber Security Analyst monitors IT systems, analyzes threats,
+                                finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'digitalMarketing' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Marketing Specialist</h5>
+                            <p class="card-text">A Digital Marketing Specialist manages campaigns, optimizing SEO,
+                                SEM, and
+                                social media with tools like Google Analytics to increase engagement.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                online
+                                marketing campaigns, analyzing digital data, driving customer engagement<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹206,311</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>53,744</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'projectManager' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Manager</h5>
+                            <p class="card-text">A Project Manager plans and coordinates projects, ensuring on-time,
+                                within-budget delivery while managing resources, risks, and communication.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>planning
+                                and
+                                executing projects, managing resources and timelines, communicating with
+                                stakeholders<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>51,099</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'businessIntelligence' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Intelligence Analyst</h5>
+                            <p class="card-text">A Business Intelligence Analyst analyzes and visualizes data to
+                                support
+                                business decisions, using Tableau and Power BI to drive strategy.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like:
+                                </strong>interpreting data
+                                to support decision-making, creating dashboards and reports. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹352,481</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>66,093</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'userInterface' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">User Interface/ User Experience(UI/Ux)</h5>
+                            <p class="card-text">A UI/UX Designer creates and refines digital interfaces to be
+                                user-friendly and visually appealing, with skills in UI design and UX research.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                visually
+                                appealing and user-friendly digital interfaces, conducting user. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span>
+                            </p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'dataAnalyst' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="cardd-text">A Data Analyst collects, cleans, and interprets data, using tools
+                                like
+                                Excel, SQL, and Tableau to analyze trends and provide insights for decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                data
+                                to find insights, creating reports and visualizations, working with spreadsheets and
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,087</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>25,124</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='{% url 'dataScientist' %}'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Scientist</h5>
+                            <p class="cardd-text">A Data Scientist analyzes large datasets to uncover insights,
+                                using
+                                statistics, machine learning, and visualization to inform business strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                complex
+                                datasets, developing machine learning models, solving statistical problems. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹412,708</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>32,249</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Machine_learning.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="cardd-text">A Machine Learning Engineer builds and optimizes algorithms that
+                                enable
+                                computers to learn from data, using large datasets and neural networks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                machine
+                                learning models, working with large datasets.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹212,679</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>12,240</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Cyber_security.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="cardd-text">A Cyber Security Analyst monitors IT systems, analyzes threats,
+                                finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section 2: Four Cards in One Row -->
+        <div id="section2" class="content-section" style="display: none;">
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Cyber_security.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="css-vac8rf">A Cyber Security Analyst monitors IT systems, analyzes threats, finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities, developing
+                                security protocols<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹294,444</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='User_interface.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">User Interface/ User Experience(UI/Ux)</h5>
+                            <p class="card-text">A UI/UX Designer creates and refines digital interfaces to be
+                                user-friendly and visually appealing, with skills in UI design and UX research.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                visually
+                                appealing and user-friendly digital interfaces, conducting user. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span>
+                            </p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Customer_Support.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Support Specialist</h5>
+                            <p class="css-vac8rf">A Computer Support Specialist provides technical help, resolving IT
+                                issues with hardware, software.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>helping people
+                                with technical issues, troubleshooting hardware and software, providing customer
+                                support<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,538</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>54,417</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Data_warehouse.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Warehouse Developer</h5>
+                            <p class="css-vac8rf">A Data Warehouse Developer designs and optimizes data warehouses,
+                                ensuring efficient storage and retrieval for analytics using ETL processes.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing and
+                                managing data storage systems, ensuring efficient data retrieval, working with large
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has a
+                                </span><span><strong><span>₹489,742</span></strong> median salary ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has approximately
+                                </span><span><strong><span>1,421</span></strong> jobs available ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='VideoGame.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/iephoZOhFiNZYoayUEaCe/cf665f3feecab550625cc8119e601c63/Video_Game_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/iephoZOhFiNZYoayUEaCe/cf665f3feecab550625cc8119e601c63/Video_Game_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/iephoZOhFiNZYoayUEaCe/cf665f3feecab550625cc8119e601c63/Video_Game_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Video Game Developer</h5>
+                            <p class="css-vac8rf">A Video Game Developer designs and codes games, creating engaging
+                                gameplay through programming and collaboration.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>designing and
+                                coding video games, creating engaging gameplay experiences, collaborating with artists
+                                and designers<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹294,444</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Automation.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7fJ873Y0VSMcf4lsHmc0Yz/34eb361c103a1757a8c33858375d1cfe/Automation_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7fJ873Y0VSMcf4lsHmc0Yz/34eb361c103a1757a8c33858375d1cfe/Automation_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7fJ873Y0VSMcf4lsHmc0Yz/34eb361c103a1757a8c33858375d1cfe/Automation_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Automation Engineer</h5>
+                            <p class="css-vac8rf">An Automation Engineer designs and implements systems to enhance
+                                efficiency and reduce manual tasks, focusing on automation and CI/CD pipelines.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                automated solutions, writing scripts for automation, improving process efficiency<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Full_stack.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4tSXoE3bVMPjkBmFLXHwDv/f0d2abf8c6d3c3ca55a33992dc3bac3a/Full_Stack_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4tSXoE3bVMPjkBmFLXHwDv/f0d2abf8c6d3c3ca55a33992dc3bac3a/Full_Stack_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4tSXoE3bVMPjkBmFLXHwDv/f0d2abf8c6d3c3ca55a33992dc3bac3a/Full_Stack_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Full stack Developer</h5>
+                            <p class="css-vac8rf">A Full Stack Developer builds and manages front-end and back-end apps,
+                                ensuring functionality using JavaScript, Python, SQL, and cloud services.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                both front-end and back-end of web applications, solving complex technical challenges,
+                                working with databases and servers<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,538</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>54,417</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Frontend.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C0PGe8TYeHJgf2lyniSiC/6d176c0328e05a877a79213acba4377e/Front_End_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C0PGe8TYeHJgf2lyniSiC/6d176c0328e05a877a79213acba4377e/Front_End_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C0PGe8TYeHJgf2lyniSiC/6d176c0328e05a877a79213acba4377e/Front_End_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Front End Developer</h5>
+                            <p class="css-vac8rf">A Front End Developer enhances the visual and interactive parts of
+                                websites and apps, ensuring a seamless experience using HTML, CSS, and JavaScript.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing and
+                                managing data storage systems, ensuring efficient data retrieval, working with large
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has a
+                                </span><span><strong><span>₹489,742</span></strong> median salary ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has approximately
+                                </span><span><strong><span>1,421</span></strong> jobs available ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='scrumMaster.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3MznIvMSDahO0jaCFO902B/d9e4c4a3538c35d1d2d3b75e33902d31/Scrum_Master-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3MznIvMSDahO0jaCFO902B/d9e4c4a3538c35d1d2d3b75e33902d31/Scrum_Master-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3MznIvMSDahO0jaCFO902B/d9e4c4a3538c35d1d2d3b75e33902d31/Scrum_Master-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Scrum Master</h5>
+                            <p class="css-vac8rf">A Scrum Master facilitates agile teams, ensures Scrum adherence,
+                                removes obstacles, and supports continuous improvement in project delivery.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>facilitating
+                                agile team meetings, removing obstacles, ensuring teams follow scrum practices<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹294,444</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='pythonDeveloper.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6P1lduhkejcpwRSf4ZoXNo/f6ba11098ae471839b228b5f800c47a1/python-developer-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6P1lduhkejcpwRSf4ZoXNo/f6ba11098ae471839b228b5f800c47a1/python-developer-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6P1lduhkejcpwRSf4ZoXNo/f6ba11098ae471839b228b5f800c47a1/python-developer-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Developer</h5>
+                            <p class="css-vac8rf">A Python Developer specializes in writing server-side web application
+                                logic and to build the hands on experience which help you to boost you knowledge.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>writing code,
+                                solving complex problems through algorithms, working with data<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Customer_Support.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Support Specialist</h5>
+                            <p class="css-vac8rf">A Computer Support Specialist provides technical help, resolving IT
+                                issues with hardware, software.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>helping people
+                                with technical issues, troubleshooting hardware and software, providing customer
+                                support<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,538</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>54,417</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Data_warehouse.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1AoKseqmwMeHhogFmIiQuj/8453f7770634d1592817101f30e8fb99/Data_Warehouse_Dev-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Warehouse Developer</h5>
+                            <p class="css-vac8rf">A Data Warehouse Developer designs and optimizes data warehouses,
+                                ensuring efficient storage and retrieval for analytics using ETL processes.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing and
+                                managing data storage systems, ensuring efficient data retrieval, working with large
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has a
+                                </span><span><strong><span>₹489,742</span></strong> median salary ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has approximately
+                                </span><span><strong><span>1,421</span></strong> jobs available ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div id="section3" class="content-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Project_Manager.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Manager</h5>
+                            <p class="css-vac8rf">A Project Manager plans and coordinates projects, ensuring on-time,
+                                within-budget delivery while managing resources, risks, and communication.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>planning and
+                                executing projects, managing resources and timelines, communicating with
+                                stakeholders<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹294,555</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>51,099</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Booker.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2ecv68YHuAeV1znJtaQp2o/8761ee89e4b2952207b8fc9d2a975d0f/Bookkeeper-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2ecv68YHuAeV1znJtaQp2o/8761ee89e4b2952207b8fc9d2a975d0f/Bookkeeper-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2ecv68YHuAeV1znJtaQp2o/8761ee89e4b2952207b8fc9d2a975d0f/Bookkeeper-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Bookkeeper Accounting Clerk</h5>
+                            <p class="css-vac8rf">A Bookkeeper records transactions, maintains ledgers, and prepares
+                                reports, ensuring accuracy and compliance using tools like QuickBooks or Xero and boost
+                                your kowledge.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>managing
+                                financial records, attention to detail, working with numbers<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,776</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>27,429</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Business Analyst.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/46OgHJ65ZWBXNnO50rD8iO/ee2581ca4137242403a294e4e7da569c/Business_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/46OgHJ65ZWBXNnO50rD8iO/ee2581ca4137242403a294e4e7da569c/Business_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/46OgHJ65ZWBXNnO50rD8iO/ee2581ca4137242403a294e4e7da569c/Business_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Analyst</h5>
+                            <p class="css-vac8rf">A Business Analyst analyzes data and processes to identify business
+                                needs, providing insights to optimize operations and support strategic decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing data
+                                to improve business processes, solving organizational problems, creating reports and the
+                                documentation.<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹247,961</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>12,184</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='HumanResource.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3tmvmI2yPsCk40EQOwHJtz/db14503e7d36fa43c12ecbf3536fc3e2/HR_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3tmvmI2yPsCk40EQOwHJtz/db14503e7d36fa43c12ecbf3536fc3e2/HR_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3tmvmI2yPsCk40EQOwHJtz/db14503e7d36fa43c12ecbf3536fc3e2/HR_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Human Resources Specialist</h5>
+                            <p class="card-text">A Human Resources Specialist manages recruitment, employee relations,
+                                and compliance using HR software to make work easier</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>recruiting and
+                                hiring employees, managing employee relations, handling payroll and benefits<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,627</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>25,104</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5MvN3mHY15hUhXN4Gqwq9d/52f736f16c2225cb18929c91f9c1bf30/Business_Analyst-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5MvN3mHY15hUhXN4Gqwq9d/52f736f16c2225cb18929c91f9c1bf30/Business_Analyst-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5MvN3mHY15hUhXN4Gqwq9d/52f736f16c2225cb18929c91f9c1bf30/Business_Analyst-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Management Analyst</h5>
+                            <p class="css-vac8rf">A Business Management Analyst analyzes operations, finds
+                                inefficiencies, and recommends data-driven strategies to boost productivity and reduce
+                                costs.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing data
+                                to identify business trends, solving organizational problems, working with teams to
+                                improve processes<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹253,443</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>48,592</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹294,444</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5uE7Oqgfgt2wLSTyUmHL2Z/aa524caaa9c8f515d55a971a18a94051/communications-public-relations-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5uE7Oqgfgt2wLSTyUmHL2Z/aa524caaa9c8f515d55a971a18a94051/communications-public-relations-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5uE7Oqgfgt2wLSTyUmHL2Z/aa524caaa9c8f515d55a971a18a94051/communications-public-relations-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Communication| Relation Specialist</h5>
+                            <p class="card-text">A Public Relations Specialist manages an organization’s communication
+                                with the public and media. They create strategies to enhance the public image.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>crafting
+                                public narratives, engaging with the media, managing a positive public image for your
+                                organization<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,627</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>7,674</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5L5t2dUQeODsNxdZXHUKc0/29ea78bfe102f2f7578af1f9f9937e91/Career_Counselor-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5L5t2dUQeODsNxdZXHUKc0/29ea78bfe102f2f7578af1f9f9937e91/Career_Counselor-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5L5t2dUQeODsNxdZXHUKc0/29ea78bfe102f2f7578af1f9f9937e91/Career_Counselor-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Career Counselor</h5>
+                            <p class="css-vac8rf">A Career Counselor guides individuals in exploring career options and
+                                setting goals, providing advice on job searches, resumes, and interviews.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>helping others
+                                find their career paths, providing guidance and support, understanding job market trends
+                                and many more just for you.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹260,295</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>5,021</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,538</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>54,417</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/56GZRuB1px1TG7VMym6pFA/69848d279a6a82b1bfec0dd422f1b4fe/payroll-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/56GZRuB1px1TG7VMym6pFA/69848d279a6a82b1bfec0dd422f1b4fe/payroll-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/56GZRuB1px1TG7VMym6pFA/69848d279a6a82b1bfec0dd422f1b4fe/payroll-specialist-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Payroll Specialist</h5>
+                            <p class="css-vac8rf">A Payroll Developer creates and maintains payroll software systems to
+                                ensure accurate and timely employee payments which make easier to you and your client.
+                            </p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                payroll systems, ensuring compliance with financial laws, integrating payroll solutions
+                                with HR functions and fuctionality, avalability<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has a
+                                </span><span><strong><span>₹489,742</span></strong> median salary ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has approximately
+                                </span><span><strong><span>1,421</span></strong> jobs available ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,519</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>5,818</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1L6MRSFzKpe8KVTe3iSqda/5ee5fe61adae27e8aa9388076508115b/Technology_Consultant-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1L6MRSFzKpe8KVTe3iSqda/5ee5fe61adae27e8aa9388076508115b/Technology_Consultant-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1L6MRSFzKpe8KVTe3iSqda/5ee5fe61adae27e8aa9388076508115b/Technology_Consultant-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Technology Consultant</h5>
+                            <p class="css-vac8rf">A Technology Consultant advises businesses on tech strategies and
+                                implements solutions to improve operations, mastering IT design and communication to
+                                place better communication..</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>advising
+                                businesses on technology solutions, analyzing business needs, implementing it
+                                strategies<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹288,988</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>37,452</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7j1sUcXd2DsfubPBOzhZQG/7abe30485ef635d6beebd26426195dca/Customer_Service_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7j1sUcXd2DsfubPBOzhZQG/7abe30485ef635d6beebd26426195dca/Customer_Service_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/7j1sUcXd2DsfubPBOzhZQG/7abe30485ef635d6beebd26426195dca/Customer_Service_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Service Representive</h5>
+                            <p class="card-text">A Customer Service Representative handles inquiries, resolves issues,
+                                and ensures satisfaction through effective communication and product knowledge </p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                visually
+                                appealing and user-friendly digital interfaces, conducting user. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span>
+                            </p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2bWr2aX0Y7WFqk0AFRJ5P2/64bac3ee9f8f50335c022c074e12b29a/Customer_Support_Spec-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Customer Support Specialist</h5>
+                            <p class="css-vac8rf">A Computer Support Specialist provides technical help, resolving IT
+                                issues with hardware, software.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>helping people
+                                with technical issues, troubleshooting hardware and software, providing customer
+                                support to get better Opportunity.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹235,538</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>54,417</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1G0J9NIkqtWNdKKjVLhEbQ/af310144c291a2fcf6e5bbacd41cc96b/Logistics_-_Supply_Chain_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1G0J9NIkqtWNdKKjVLhEbQ/af310144c291a2fcf6e5bbacd41cc96b/Logistics_-_Supply_Chain_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1G0J9NIkqtWNdKKjVLhEbQ/af310144c291a2fcf6e5bbacd41cc96b/Logistics_-_Supply_Chain_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Logistic Supply chain Analytics</h5>
+                            <p class="css-vac8rf">A Logistics Analyst optimizes supply chains by analyzing data,
+                                improving workflows, and using ERP systems to manage inventory and reduce costs.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing and
+                                managing data storage systems, ensuring efficient data retrieval, working with large
+                                databases and dataset<span data-testid="visually-hidden" class="css-1whdyhf">.</span>
+                            </p>
+                            <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has a
+                                </span><span><strong><span>₹489,742</span></strong> median salary ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                    class="css-1whdyhf">This role has approximately
+                                </span><span><strong><span>1,421</span></strong> jobs available ¹</span><span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 4 -->
+        <div id="section4" class="content-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Content_Creator.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C1nzPfmiVmVk5ElvQeoKV/aa4e79a26fcd538c8ded0de64823a812/content-creator-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C1nzPfmiVmVk5ElvQeoKV/aa4e79a26fcd538c8ded0de64823a812/content-creator-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2C1nzPfmiVmVk5ElvQeoKV/aa4e79a26fcd538c8ded0de64823a812/content-creator-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Content cretor</h5>
+                            <p class="card-text">A Content Creator produces a variety of content formats for digital
+                                platforms, including articles, videos, and social media posts.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                engaging digital content, experimenting with new strategies, analyzing audience feedback
+                                to enhance brand visibility<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_operation.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Operation Specialist</h5>
+                            <p class="card-text">A Sales Operations Specialist optimizes sales processes, analyzes data,
+                                and manages CRM systems, forecasting, and reporting to enhance efficiency and
+                                transparency.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                sales data, supporting sales teams, optimizing sales processes<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_representative.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Development Representative</h5>
+                            <p class="card-text">A Sales Development Representative generates and qualifies leads to
+                                drive sales growth, using CRM tools to manage prospects and support strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>identifying
+                                potential customers, generating leads, reaching out to prospects<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_repre.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Representative</h5>
+                            <p class="card-text">A Sales Representative sells products and services, building customer
+                                relationships to meet sales targets by identifying needs and closing deals.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>selling
+                                products or services, building customer relationships, understanding customer needs
+                                accourding to the requirments<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹241,109</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>181,905</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 5 -->
+        <div id="section5" class="content-section" style="display: block;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Data_Analyst.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="cardd-text">A Data Analyst collects, cleans, and interprets data, using tools
+                                like
+                                Excel, SQL, and Tableau to analyze trends and provide insights for decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                data
+                                to find insights, creating reports and visualizations, working with spreadsheets and
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,087</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>25,124</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Data_Scientist'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Scientist</h5>
+                            <p class="cardd-text">A Data Scientist analyzes large datasets to uncover insights,
+                                using
+                                statistics, machine learning, and visualization to inform business strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                complex
+                                datasets, developing machine learning models, solving statistical problems. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹412,708</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>32,249</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Machine_learning.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="cardd-text">A Machine Learning Engineer builds and optimizes algorithms that
+                                enable
+                                computers to learn from data, using large datasets and neural networks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                machine
+                                learning models, working with large datasets.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹212,679</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>12,240</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='cyber_security.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="cardd-text">A Cyber Security Analyst monitors IT systems, analyzes threats,
+                                finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Digital_Marketing.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3QfLniRUXv6DdXkmGfLXzn/b4cb48895e318e0bcb6fb24d97848710/Digital_Marketing_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Marketing Specialist</h5>
+                            <p class="card-text">A Digital Marketing Specialist manages campaigns, optimizing SEO,
+                                SEM, and
+                                social media with tools like Google Analytics to increase engagement.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                online
+                                marketing campaigns, analyzing digital data, driving customer engagement<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹206,311</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>53,744</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Project_Manager.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5ljfRsTdVz1cL6CAGEqUku/bd9262bd36ed9ecdbef635704a15a4eb/Project_Manager-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Manager</h5>
+                            <p class="card-text">A Project Manager plans and coordinates projects, ensuring on-time,
+                                within-budget delivery while managing resources, risks, and communication.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>planning
+                                and
+                                executing projects, managing resources and timelines, communicating with
+                                stakeholders<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>51,099</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Business_intelligence.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Intelligence Analyst</h5>
+                            <p class="card-text">A Business Intelligence Analyst analyzes and visualizes data to
+                                support
+                                business decisions, using Tableau and Power BI to drive strategy.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like:
+                                </strong>interpreting data
+                                to support decision-making, creating dashboards and reports. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹352,481</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>66,093</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='User_interface.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/5IsGEeYCPeL4aEQubWn6B6/a8777da5de882ca7353dedafa49bf68e/UI-UX_Designer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">User Interface/ User Experience(UI/Ux)</h5>
+                            <p class="card-text">A UI/UX Designer creates and refines digital interfaces to be
+                                user-friendly and visually appealing, with skills in UI design and UX research.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                visually
+                                appealing and user-friendly digital interfaces, conducting user. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span>
+                            </p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹269,187</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>23,425</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4SOZ5pnB6iLm6CblBzbovv/f74d8252f50e99e682caff61d094c5be/Social_Media_Strategist_-_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="cardd-text">A Data Analyst collects, cleans, and interprets data, using tools
+                                like
+                                Excel, SQL, and Tableau to analyze trends and provide insights for decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                data
+                                to find insights, creating reports and visualizations, working with spreadsheets and
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,087</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>25,124</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Scientist</h5>
+                            <p class="cardd-text">A Data Scientist analyzes large datasets to uncover insights,
+                                using
+                                statistics, machine learning, and visualization to inform business strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                complex
+                                datasets, developing machine learning models, solving statistical problems. <span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹412,708</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>32,249</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/lDjWGMy2tzPVgrIqiVU43/1f922da497567defd20a21ea4af5b8b5/Data_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="cardd-text">A Machine Learning Engineer builds and optimizes algorithms that
+                                enable
+                                computers to learn from data, using large datasets and neural networks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                machine
+                                learning models, working with large datasets.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹212,679</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>12,240</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='cyber_security.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="cardd-text">A Cyber Security Analyst monitors IT systems, analyzes threats,
+                                finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analyst</h5>
+                            <p class="cardd-text">A Data Analyst collects, cleans, and interprets data, using tools
+                                like
+                                Excel, SQL, and Tableau to analyze trends and provide insights for decisions.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                data
+                                to find insights, creating reports and visualizations, working with spreadsheets and
+                                databases<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹265,087</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>25,124</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Data_Analyst.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Scientist</h5>
+                            <p class="cardd-text">A Data Scientist analyzes large datasets to uncover insights,
+                                using
+                                statistics, machine learning, and visualization to inform business strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                complex
+                                datasets, developing machine learning models, solving statistical.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹412,708</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>32,249</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/599o30wORCv3HfGL69jCc3/6f765c21b0030a065e71dfdf14686764/Machine_Learning_Engineer-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="cardd-text">A Machine Learning Engineer builds and optimizes algorithms that
+                                enable
+                                computers to learn from data, using large datasets and neural networks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>developing
+                                machine
+                                learning models, working with large datasets.<span data-testid="visually-hidden"
+                                    class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹212,679</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>12,240</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cyber Security Analyst</h5>
+                            <p class="cardd-text">A Cyber Security Analyst monitors IT systems, analyzes threats,
+                                finds
+                                vulnerabilities, and implements measures to protect data from cyber attacks.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>protecting
+                                networks and data from cyber threats, analyzing security vulnerabilities.<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹293,791</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has
+                                        approximately
+                                    </span><span><strong><span>6,372</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 6 -->
+        <div id="section6" class="content-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='Content_Creator.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4lDxmmYpba2XV97J9n9bNM/457fb08295275b9169468fc60d0a213d/personal-trainer-fitness-instructor-role-card_1X.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4lDxmmYpba2XV97J9n9bNM/457fb08295275b9169468fc60d0a213d/personal-trainer-fitness-instructor-role-card_1X.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/4lDxmmYpba2XV97J9n9bNM/457fb08295275b9169468fc60d0a213d/personal-trainer-fitness-instructor-role-card_1X.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Content cretor</h5>
+                            <p class="card-text">A Content Creator produces a variety of content formats for digital
+                                platforms, including articles, videos, and social media posts.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>creating
+                                engaging
+                                digital content, experimenting with new strategies, analyzing audience feedback to
+                                enhance
+                                brand visibility<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_operation.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6SPur9xmtCSP7RfQZ751dD/13c47db167a8a5fea6de38ea87725a84/Sales_Op_Specialist-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Operation Specialist</h5>
+                            <p class="card-text">A Sales Operations Specialist optimizes sales processes, analyzes data,
+                                and
+                                manages CRM systems, forecasting, and reporting to enhance efficiency and transparency.
+                            </p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>analyzing
+                                sales
+                                data, supporting sales teams, optimizing sales processes<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_representative.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1oXBZtAgS0kz3lgSC3Lfha/cad79a399e229fa48ae1f5970cfe0b95/Sales_Dev_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Development Representative</h5>
+                            <p class="card-text">A Sales Development Representative generates and qualifies leads to
+                                drive
+                                sales growth, using CRM tools to manage prospects and support strategies.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>identifying
+                                potential customers, generating leads, reaching out to prospects<span
+                                    data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹271,172</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>3,001</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="window.location.href='sales_repre.html'">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=1&amp;w=430"
+                            srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=2&amp;w=430 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1GaDiUxDyOEsrqilpSEEV9/a10643a353750413ec84dc4182c69008/Sales_Rep-role-card_2x.png?auto=format%2Ccompress&amp;dpr=3&amp;w=430 3x"
+                            alt="" style="max-width: 430px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales Representative</h5>
+                            <p class="card-text">A Sales Representative sells products and services, building customer
+                                relationships to meet sales targets by identifying needs and closing deals.</p>
+                            <p class="css-vac8rf" data-testid="role-skills"><strong>If you like: </strong>selling
+                                products
+                                or services, building customer relationships, understanding customer needs accourding to
+                                the
+                                requirments<span data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            <div>
+                                <p class="css-vac8rf" data-testid="median-salary"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has a
+                                    </span><span><strong><span>₹241,109</span></strong> median salary ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                                <p class="css-vac8rf" data-testid="jobs-available"><span data-testid="visually-hidden"
+                                        class="css-1whdyhf">This role has approximately
+                                    </span><span><strong><span>181,905</span></strong> jobs available ¹</span><span
+                                        data-testid="visually-hidden" class="css-1whdyhf">.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- career resources -->
+    <div class="container">
+        <div>
+            <h2 class="mt-5 mb-5">Career resources</h2>
+        </div>
+        <div class="holder">
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card_career">
+                        <div class="card-body">
+                            <h6 class="cds-CommonCard-title css-6ecy9b">What Does a Data Analyst Do? Your 2024 Career
+                                Guide
+                            </h6>
+                            <p class="css-vac8rf ">A data analyst collects, cleans, and interprets data sets in order to
+                                answer a question or solve a problem. They work in many industries, including business,
+                                finance, criminal justice, science.</p>
+                            <p class="css-vac8rf"><small> 1, 2024 · 7 min read</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card_career ">
+
+                        <div class="card-body">
+                            <h6 class="cds-CommonCard-title css-6ecy9b">What Is a Project Manager? A Career Guide</h6>
+                            <p class="css-vac8rf">A project manager is a professional who organizes, plans, and executes
+                                projects while working within restraints like budgets and schedules.</p>
+                            <p class="css-vac8rf"><small>May 29, 2024</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card_career">
+                        <div class="card-body">
+                            <h6 class="cds-CommonCard-title css-6ecy9b">What Does a Web Developer Do (and How Do I
+                                Become
+                                One)?</h6>
+                            <p class="css-vac8rf">A data analyst collects, cleans, and interprets data sets in order to
+                                answer a question or solve a problem and solution. </p>
+                            <p class="css-vac8rf"><small>March 25, 2024 · 7 min read</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card_career">
+                        <div class="card-body">
+                            <h6 class="cds-CommonCard-title css-6ecy9b">What Does a UX Designer Do?</h6>
+                            <p class="css-vac8rf">A data analyst collects, cleans, and interprets data sets in order to
+                                answer a question or solve a problem. They work in many industries, including
+                                business,healthcare.</p>
+                            <div class="cds-ProductCard-footer">
+                                <div class="cds-CommonCard-metadata" data-e2e="article-metadata">
+                                    <p class="css-vac8rf"><small>September 19, 2024 · 9 min read</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

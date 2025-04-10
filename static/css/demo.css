@@ -1,0 +1,40 @@
+.btn-category {
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-weight: 100px;
+}
+
+.btn-category.active {
+    background-color: #4b5c77;
+    color: white;
+}
+.card:hover {
+    transform: scale(1.03);
+    /* Zoom in on hover */
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+
+}
+.custom-search {
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.custom-search input {
+    border-radius: 20px;
+    padding-left: 60px; /* Space for search icon */
+}
+.custom-search .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(7, 7, 7);
+    margin-left: 10px;
+}

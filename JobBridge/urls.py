@@ -32,6 +32,33 @@ from courses.views import devops_mobile1;
 from courses.views import devops_mobile2;
 from courses.views import enroll;
 from authentication.views import house;
+from jobs.views import jobs;
+from jobs.views import automation;
+from jobs.views import booker;
+from jobs.views import businessAanalyst;
+from jobs.views import businessIntelligence;
+from jobs.views import cyberSecurity;
+from jobs.views import customerSupport;
+from jobs.views import dataScientist;
+from jobs.views import dataAnalyst;
+from jobs.views import digitalMarketing;
+from jobs.views import salesRepre;
+from jobs.views import machineLearning;
+from jobs.views import salesOperation;
+from jobs.views import contentCreator;
+from jobs.views import dataWarehouse;
+from jobs.views import projectManager;
+from jobs.views import humanResource;
+from jobs.views import pythonDeveloper;
+from jobs.views import pythonDeveloper;
+from jobs.views import salesRepresentative;
+from jobs.views import scrumMaster;
+from jobs.views import userInterface;
+from jobs.views import videoGame;
+from jobs.views import jobsForm;
+
+
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -51,6 +78,30 @@ urlpatterns = [
     path('development1/',development2, name='development2'),
     path('devops_mobile1/',devops_mobile1, name='devops_mobile1'),
     path('devops_mobile2/',devops_mobile2, name='devops_mobile2'),
-    path('enroll',enroll, name='enroll')
+    path('enroll',enroll, name='enroll'),
+
+    path('jobs/',jobs, name='jobs'),
+    path('automation/',automation, name='automation'),
+    path('business-analyst/',businessAanalyst, name='businessAanalyst'),
+    path('content-creator/',contentCreator, name='contentCreator'),
+    path('customer-support/',customerSupport, name='customerSupport'),
+    path('cyber-security/',cyberSecurity, name='cyberSecurity'),
+    path('data-analyst/',dataAnalyst, name='dataAnalyst'),
+    path('data-warehouse/',dataWarehouse, name='dataWarehouse'),
+    path('data-scientist/',dataScientist, name='dataScientist'),
+    path('digital-marketing/',digitalMarketing, name='digitalMarketing'),
+    path('human-resource/',humanResource, name='humanResource'),
+    path('machine-learning/',machineLearning, name='machineLearning'),
+    path('project-manager/',projectManager, name='projectManager'),
+    path('python-developer/',pythonDeveloper, name='pythonDeveloper'),
+    path('sales-operation/',salesOperation, name='salesOperation'),
+    path('sales-repre/',salesRepre, name='salesRepre'),
+    path('sales-representative/',salesRepresentative, name='salesRepresentative'),
+    path('scrum-master/',scrumMaster, name='scrumMaster'),
+    path('user-interface/',userInterface, name='userInterface'),
+    path('video-game/',videoGame, name='videoGame'),
+    path('jobsForm/',jobsForm, name='jobsForm'),
+    path('business-intelligence/',businessIntelligence, name='businessIntelligence')
+    
 
 ]
