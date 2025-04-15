@@ -11,8 +11,13 @@ def automation(request):
 def booker(request):
     return render(request,'Booker.html')
 
+def fullStack(request):
+    return render(request, 'Full_stack.html')
 
-def businessAanalyst(request):
+def frontend(request):
+    return render(request, 'Frontend.html')
+
+def businessAnalyst(request):
     return render(request,'Business_Analyst.html')
 
 def businessIntelligence(request):

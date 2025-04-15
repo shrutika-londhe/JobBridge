@@ -37,7 +37,7 @@ from authentication.views import house;
 from jobs.views import jobs;
 from jobs.views import automation;
 from jobs.views import booker;
-from jobs.views import businessAanalyst;
+from jobs.views import businessAnalyst;
 from jobs.views import businessIntelligence;
 from jobs.views import cyberSecurity;
 from jobs.views import customerSupport;
@@ -58,7 +58,8 @@ from jobs.views import scrumMaster;
 from jobs.views import userInterface;
 from jobs.views import videoGame;
 from jobs.views import jobsForm;
-
+from jobs.views import fullStack;
+from jobs.views import frontend;
 
 
 urlpatterns = [
@@ -84,7 +85,10 @@ urlpatterns = [
 
     path('jobs/',jobs, name='jobs'),
     path('automation/',automation, name='automation'),
-    path('business-analyst/',businessAanalyst, name='businessAanalyst'),
+    path('business-analyst/',businessAnalyst, name='businessAnalyst'),
+    path('full-stack/',fullStack, name='fullStack'),
+    path('frontend/',frontend, name='frontend'),
+    path('booker/',booker, name='booker'),
     path('content-creator/',contentCreator, name='contentCreator'),
     path('customer-support/',customerSupport, name='customerSupport'),
     path('cyber-security/',cyberSecurity, name='cyberSecurity'),
