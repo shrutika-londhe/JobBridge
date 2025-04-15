@@ -54,12 +54,14 @@
   <body>
     <div class="form-container">
       <h2>Enroll Now</h2>
-      <form id="enrollForm">
+      <form method="POST" id="enrollForm">
+        {% csrf_token %}
         <div class="form-floating mb-3">
           <input
             type="text"
             class="form-control"
             id="fullName"
+            name="fullName"
             placeholder="Your Full Name"
             required
           />
@@ -71,6 +73,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="Your Email"
             required
           />
@@ -82,6 +85,7 @@
             type="tel"
             class="form-control"
             id="phone"
+            name="phone"
             placeholder="Your Phone Number"
             required
           />
@@ -89,7 +93,12 @@
         </div>
 
         <div class="form-floating mb-3">
-          <select class="form-select" id="courseSelect" required>
+          <select
+            class="form-select"
+            id="courseSelect"
+            name="courseSelect"
+            required
+          >
             <option value="">-- Choose a Course --</option>
             <option>Artificial Intelligence & ML</option>
             <option>Data Science & Analytics</option>
@@ -112,9 +121,9 @@
             <input
               class="form-check-input"
               type="radio"
-              name="experience"
               id="beginner"
               value="Beginner"
+              name="experience"
               required
             />
             <label class="form-check-label" for="beginner">Beginner</label>
@@ -125,13 +134,14 @@
               type="radio"
               name="experience"
               id="intermediate"
+              name="experience"
               value="Intermediate"
             />
             <label class="form-check-label" for="intermediate"
               >Intermediate</label
             >
           </div>
-          <div class="form-check">
+          <div class="form-check" name="paymentMethod">
             <input
               class="form-check-input"
               type="radio"
@@ -146,7 +156,12 @@
         <!-- Payment Method -->
         <div class="mb-3">
           <label class="form-label fw-bold">Select Payment Method</label>
-          <select class="form-select" id="paymentMethod" required>
+          <select
+            class="form-select"
+            id="paymentMethod"
+            name="paymentMethod"
+            required
+          >
             <option value="">-- Select Payment Method --</option>
             <option value="card">Credit/Debit Card</option>
             <option value="paypal">PayPal</option>
@@ -161,6 +176,7 @@
               type="text"
               class="form-control"
               id="cardNumber"
+              name="cardNumber"
               placeholder="Card Number"
             />
             <label for="cardNumber">Card Number</label>
@@ -170,6 +186,7 @@
               type="text"
               class="form-control"
               id="cardName"
+              name="cardName"
               placeholder="Cardholder Name"
             />
             <label for="cardName">Cardholder Name</label>
@@ -181,6 +198,7 @@
                   type="text"
                   class="form-control"
                   id="expiryDate"
+                  name="expiryDate"
                   placeholder="MM/YY"
                 />
                 <label for="expiryDate">Expiry Date (MM/YY)</label>
@@ -192,6 +210,7 @@
                   type="text"
                   class="form-control"
                   id="cvv"
+                  name="cvv"
                   placeholder="CVV"
                 />
                 <label for="cvv">CVV</label>
@@ -207,6 +226,7 @@
               type="email"
               class="form-control"
               id="paypalEmail"
+              name="paypalEmail"
               placeholder="PayPal Email"
             />
             <label for="paypalEmail">PayPal Email</label>
@@ -220,6 +240,7 @@
               type="text"
               class="form-control"
               id="upiId"
+              name="upiId"
               placeholder="UPI ID"
             />
             <label for="upiId">UPI ID</label>
@@ -229,6 +250,13 @@
         <button type="submit" class="btn btn-enroll">Submit Enrollment</button>
       </form>
     </div>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="alert alert-success">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
     <script>
       $(document).ready(function () {
@@ -246,7 +274,6 @@
         });
 
         $("#enrollForm").submit(function (event) {
-          event.preventDefault();
           alert("Enrollment Successful! Payment Processed.");
         });
       });

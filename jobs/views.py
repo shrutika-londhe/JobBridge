@@ -69,5 +69,33 @@ def userInterface(request):
 def videoGame(request):
     return render(request,'VideoGame.html')
 
+from django.shortcuts import render, redirect
+from .models import JobApplication
+
 def jobsForm(request):
-    return render(request,'jobs_form.html')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        dob = request.POST.get('dob')
+        address = request.POST.get('address')
+        gender = request.POST.get('gender')
+        position = request.POST.get('position')
+        resume = request.FILES.get('resume')
+        message = request.POST.get('message')
+
+        job = JobApplication(
+            name=name,
+            email=email,
+            phone=phone,
+            dob=dob,
+            address=address,
+            gender=gender,
+            position=position,
+            resume=resume,
+            message=message
+        )
+        job.save()
+        return redirect('index')  # redirect to home or a success page
+
+    return render(request, 'jobs_form.html')

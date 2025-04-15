@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from authentication.views import homePage
-from authentication.views import authPage
-from authentication.views import about
-from authentication.views import contact
-from dashboard.views import dashboard
+from authentication.views import indexPage;
+from authentication.views import logout_view;
+from authentication.views import profilePage;
+from authentication.views import authPage;
+from authentication.views import about;
+from authentication.views import contact;
+from dashboard.views import dashboard;
 from courses.views import courses;
 from courses.views import ai_data1;
 from courses.views import ai_data2;
@@ -30,7 +32,7 @@ from courses.views import development1;
 from courses.views import development2;
 from courses.views import devops_mobile1;
 from courses.views import devops_mobile2;
-from courses.views import enroll;
+from courses.views import enroll_view;
 from authentication.views import house;
 from jobs.views import jobs;
 from jobs.views import automation;
@@ -59,12 +61,12 @@ from jobs.views import jobsForm;
 
 
 
-
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('',homePage),
-    path('home/',house),
-    path('login/',authPage, name='authPage'),
+   path('', indexPage, name='index'),           # Main Page
+    path('auth/', authPage, name='auth'),        # Login/Register Page
+    path('logout/', logout_view, name='logout'), # Logout
+    path('profile/', profilePage, name='profile'),# Profile Page
     path('about/',about, name='about'),
     path('contact/',contact, name='contact'),
     path('dashboard/',dashboard, name='dashboard'),
@@ -78,7 +80,7 @@ urlpatterns = [
     path('development1/',development2, name='development2'),
     path('devops_mobile1/',devops_mobile1, name='devops_mobile1'),
     path('devops_mobile2/',devops_mobile2, name='devops_mobile2'),
-    path('enroll',enroll, name='enroll'),
+    path('enroll',enroll_view, name='enroll'),
 
     path('jobs/',jobs, name='jobs'),
     path('automation/',automation, name='automation'),
@@ -102,6 +104,5 @@ urlpatterns = [
     path('video-game/',videoGame, name='videoGame'),
     path('jobsForm/',jobsForm, name='jobsForm'),
     path('business-intelligence/',businessIntelligence, name='businessIntelligence')
-    
 
 ]

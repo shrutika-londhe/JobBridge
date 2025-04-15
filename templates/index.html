@@ -92,8 +92,17 @@
           </ul>
 
           <div class="d-flex align-items-center">
-            <button onclick="location.href='{% url 'authPage' %}'" class="btn btn-primary">Login</button>
-          </div>
+            <!-- <button onclick="location.href='{% url 'auth' %}'" class="btn btn-primary">Login</button> -->
+            {% if user_email %}
+    <!-- Show Profile Button if Logged In -->
+    <a href="{% url 'profile' %}" class="btn btn-outline-primary">Profile</a>
+    <a href="{% url 'logout' %}" class="btn btn-outline-danger ms-2">Logout</a>
+{% else %}
+    <!-- Show Login Button if Not Logged In -->
+    <a href="{% url 'auth' %}" class="btn btn-primary">Login</a>
+{% endif %}
+
+        </div>
         </div>
       </div>
     </nav>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f8f9fa;
+      }
+      .sidebar {
+        height: 100vh;
+        background-color: #343a40;
+        padding-top: 2rem;
+      }
+      .sidebar a {
+        color: #dee2e6;
+        text-decoration: none;
+        padding: 15px;
+        display: block;
+        transition: all 0.3s;
+      }
+      .sidebar a:hover {
+        background-color: #495057;
+        color: #fff;
+      }
+      .sidebar a.active {
+        background-color: #0d6efd;
+        color: #fff;
+      }
+      .content {
+        padding: 2rem;
+      }
+      .header {
+        background-color: #ffffff;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #dee2e6;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header h2 {
+        margin: 0;
+      }
+      .logout-btn {
+        color: #fff;
+        background-color: #dc3545;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .logout-btn:hover {
+        background-color: #bb2d3b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+
+        <div class="col-md-3 col-lg-2 sidebar">
+          <h2 class="text-center mb-2 text-white">JobBridge</h2>
+          <a href="#" class="active">Dashboard</a>
+          <a href="#">Courses</a>
+          <a href="#">Jobs</a>
+          <a href="#">My Profile</a>
+          <a href="{% url 'logout' %}" class="text-danger">Logout</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9 col-lg-10 content">
+          <div class="header d-flex justify-content-between align-items-center">
+            <h2>Welcome to JobBridge, {{ user_email }}</h2>
+            <p class="m-auto end-0">We're glad to have you back!</p>
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+          </div>
+
+          <div class="mt-4">
+            <h4>Dashboard Overview</h4>
+            <p>
+              Use the sidebar to navigate through your dashboard sections like
+              Courses, Jobs, and Profile.
+            </p>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                  <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">Enrolled Courses</h5>
+                      <p class="card-text display-6">{{ course_count }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">Job Applications</h5>
+                      <p class="card-text display-6">{{ job_count }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">Profile Completion</h5>
+                      <p class="card-text display-6">{{ profile_completion }}%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4 class="mt-5">Recent Activity</h4>
+              <ul class="list-group">
+                <li class="list-group-item">You enrolled in <strong>Web Development</strong></li>
+                <li class="list-group-item">You applied for <strong>Frontend Developer at ABC Corp</strong></li>
+                <li class="list-group-item">Your profile was updated</li>
+              </ul>
+              <div class="mt-4 d-flex gap-3">
+                <a href="{% url 'courses' %}" class="btn btn-outline-primary">Browse Courses</a>
+                <a href="{% url 'jobs' %}" class="btn btn-outline-success">Find Jobs</a>
+                <a href="{% url 'profile' %}" class="btn btn-outline-secondary">Edit Profile</a>
+              </div>
+              
+              <div class="alert alert-info mt-4" role="alert">
+                🌟 "The future belongs to those who learn more skills and combine them in creative ways." – Robert Greene
+              </div>
+                                                        
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
