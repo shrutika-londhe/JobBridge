@@ -85,7 +85,7 @@ def jobsForm(request):
         dob = request.POST.get('dob')
         address = request.POST.get('address')
         gender = request.POST.get('gender')
-        position = request.POST.get('position')
+        job_title = request.POST.get('position')
         resume = request.FILES.get('resume')
         message = request.POST.get('message')
 
@@ -96,7 +96,7 @@ def jobsForm(request):
             dob=dob,
             address=address,
             gender=gender,
-            position=position,
+            job_title=job_title,
             resume=resume,
             message=message
         )
@@ -104,3 +104,7 @@ def jobsForm(request):
         return redirect('index')  # redirect to home or a success page
 
     return render(request, 'jobs_form.html')
+
+def applied_jobs(request):
+    jobs = JobApplication.objects.all()
+    return render(request, 'profile.html', {'jobs': jobs})
