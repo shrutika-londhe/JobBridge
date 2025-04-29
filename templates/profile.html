@@ -19,6 +19,10 @@
         height: 100vh;
         background-color: #343a40;
         padding-top: 2rem;
+        position: fixed;
+        width: 16.6667%; /* 2 columns out of 12 */
+        left: 0;
+        top: 0;
       }
       .sidebar a {
         color: #dee2e6;
@@ -35,7 +39,8 @@
         background-color: #0d6efd;
         color: #fff;
       }
-      .content {
+      .main-area {
+        margin-left: 16.6667%; /* offset by sidebar width */
         padding: 2rem;
       }
       .header {
@@ -60,25 +65,34 @@
       .logout-btn:hover {
         background-color: #bb2d3b;
       }
+      #mainDashboardWrapper > div {
+        display: none;
+      }
+      #mainDashboardWrapper > .active-section {
+        display: block;
+      }
     </style>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2 class="text-center mb-2 text-white">JobBridge</h2>
+      <a href="#" class="active" onclick="showSection('mainContent', this)"
+        >Dashboard</a
+      >
+      <a href="#" onclick="showSection('enrolledCourse', this)">Courses</a>
+      <a href="#" onclick="showSection('jobApplications', this)">Jobs</a>
 
-        <div class="col-md-3 col-lg-2 sidebar">
-          <h2 class="text-center mb-2 text-white">JobBridge</h2>
-          <a href="#" class="active">Dashboard</a>
-          <a href="#">Courses</a>
-          <a href="#">Jobs</a>
-          <a href="#">My Profile</a>
-          <a href="{% url 'logout' %}" class="text-danger">Logout</a>
-        </div>
+      <a href="#">My Profile</a>
+      <a href="{% url 'logout' %}" class="text-danger">Logout</a>
+    </div>
 
-        <!-- Main Content -->
-        <div class="col-md-9 col-lg-10 content">
-          <div class="header d-flex justify-content-between align-items-center">
+    <!-- Main Content -->
+    <div class="main-area">
+      <div id="mainDashboardWrapper">
+        <!-- Dashboard Section -->
+        <div id="mainContent" class="active-section">
+          <div class="header">
             <h2>Welcome to JobBridge, {{ user_email }}</h2>
             <p class="m-auto end-0">We're glad to have you back!</p>
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
@@ -91,52 +105,165 @@
               Courses, Jobs, and Profile.
             </p>
             <div class="row mt-4">
-                <div class="col-md-4">
-                  <div class="card text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="card-title">Enrolled Courses</h5>
-                      <p class="card-text display-6">{{ course_count }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="card-title">Job Applications</h5>
-                      <p class="card-text display-6">{{ job_count }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="card-title">Profile Completion</h5>
-                      <p class="card-text display-6">{{ profile_completion }}%</p>
-                    </div>
+              <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">Enrolled Courses</h5>
+                    <p class="card-text display-6">{{ course_count }}</p>
                   </div>
                 </div>
               </div>
-              <h4 class="mt-5">Recent Activity</h4>
-              <ul class="list-group">
-                <li class="list-group-item">You enrolled in <strong>Web Development</strong></li>
-                <li class="list-group-item">You applied for <strong>Frontend Developer at ABC Corp</strong></li>
-                <li class="list-group-item">Your profile was updated</li>
-              </ul>
-              <div class="mt-4 d-flex gap-3">
-                <a href="{% url 'courses' %}" class="btn btn-outline-primary">Browse Courses</a>
-                <a href="{% url 'jobs' %}" class="btn btn-outline-success">Find Jobs</a>
-                <a href="{% url 'profile' %}" class="btn btn-outline-secondary">Edit Profile</a>
+              <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">Job Applications</h5>
+                    <p class="card-text display-6">{{ job_count }}</p>
+                  </div>
+                </div>
               </div>
-              
-              <div class="alert alert-info mt-4" role="alert">
-                🌟 "The future belongs to those who learn more skills and combine them in creative ways." – Robert Greene
+              <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">Profile Completion</h5>
+                    <p class="card-text display-6">{{ profile_completion }}%</p>
+                  </div>
+                </div>
               </div>
-                                                        
+            </div>
+
+            <h4 class="mt-5">Recent Activity</h4>
+            <ul class="list-group">
+              <li class="list-group-item">
+                You enrolled in <strong>Web Development</strong>
+              </li>
+              <li class="list-group-item">
+                You applied for <strong>Frontend Developer at ABC Corp</strong>
+              </li>
+              <li class="list-group-item">Your profile was updated</li>
+            </ul>
+
+            <div class="mt-4 d-flex gap-3">
+              <a href="{% url 'courses' %}" class="btn btn-outline-primary"
+                >Browse Courses</a
+              >
+              <a href="{% url 'jobs' %}" class="btn btn-outline-success"
+                >Find Jobs</a
+              >
+              <a href="{% url 'profile' %}" class="btn btn-outline-secondary"
+                >Edit Profile</a
+              >
+            </div>
+
+            <div class="alert alert-info mt-4" role="alert">
+              🌟 "The future belongs to those who learn more skills and combine
+              them in creative ways." – Robert Greene
+            </div>
+          </div>
+        </div>
+
+        <!-- Enrolled Courses Section -->
+        <div id="enrolledCourse">
+          <h4 class="mt-5">Enrolled Courses</h4>
+          <div class="card shadow-sm mt-3">
+            <div class="card-header bg-primary text-white">
+              Enrolled Course Details
+            </div>
+            <div class="card-body table-responsive">
+              {% if enrollments %}
+              <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course</th>
+                    <th>Experience</th>
+                    <th>Payment Method</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for enrollment in enrollments %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ enrollment.full_name }}</td>
+                    <td>{{ enrollment.email }}</td>
+                    <td>{{ enrollment.phone }}</td>
+                    <td>{{ enrollment.course }}</td>
+                    <td>{{ enrollment.experience }}</td>
+                    <td>{{ enrollment.payment_method }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <div class="alert alert-info">No courses enrolled yet.</div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Applications Section -->
+        <div id="jobApplications">
+          <h4 class="mt-5">Job Applications</h4>
+          <div class="card shadow-sm mt-3">
+            <div class="card-header bg-success text-white">Applied Jobs</div>
+            <div class="card-body table-responsive">
+              {% if job_applications %}
+              <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Company</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                    <th>Applied On</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for job in job_applications %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ job.company_name }}</td>
+                    <td>{{ job.job_title }}</td>
+                    <td>{{ job.status }}</td>
+                    <td>{{ job.applied_on }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <div class="alert alert-info">No job applications found.</div>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap JS (Optional) -->
+    <!-- JS for Section Toggle -->
+    <script>
+      function showSection(sectionId, link) {
+        const sections = ["mainContent", "enrolledCourse", "jobApplications"];
+
+        sections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove("active-section");
+        });
+        document.getElementById(sectionId).classList.add("active-section");
+
+        // Highlight the sidebar link
+        document
+          .querySelectorAll(".sidebar a")
+          .forEach((a) => a.classList.remove("active"));
+        link.classList.add("active");
+      }
+
+      window.onload = () =>
+        showSection("mainContent", document.querySelector(".sidebar a.active"));
+    </script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

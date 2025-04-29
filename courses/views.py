@@ -31,10 +31,6 @@ def devops_mobile2(request):
     return render(request,'devops_mobile2.html')
 
 
-
-
-
-
 def enroll_view(request):
     if request.method == 'POST':
         full_name = request.POST.get('fullName')

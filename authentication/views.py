@@ -129,9 +129,4 @@ def logout_view(request):
     return redirect('index')
 
 
-# PROFILE VIEW
-def profilePage(request):
-    user_email = request.session.get('user_email')
-    if not user_email:
-        return redirect('auth')
-    return render(request, 'profile.html', {'user_email': user_email})
+

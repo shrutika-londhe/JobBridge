@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from authentication.views import indexPage;
 from authentication.views import logout_view;
-from authentication.views import profilePage;
 from authentication.views import authPage;
 from authentication.views import about;
 from authentication.views import contact;
@@ -67,10 +66,10 @@ urlpatterns = [
    path('', indexPage, name='index'),           # Main Page
     path('auth/', authPage, name='auth'),        # Login/Register Page
     path('logout/', logout_view, name='logout'), # Logout
-    path('profile/', profilePage, name='profile'),# Profile Page
+    path('dashboard/', dashboard, name='profile'),# Profile Page
     path('about/',about, name='about'),
     path('contact/',contact, name='contact'),
-    path('dashboard/',dashboard, name='dashboard'),
+ 
 
     path('courses/',courses, name='courses'),   
     path('ai_data1/',ai_data1, name='ai_data1'),
